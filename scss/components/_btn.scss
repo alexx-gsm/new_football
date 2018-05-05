@@ -1,0 +1,125 @@
+.btn {
+  $_: '.btn';
+  font-family: 'Circe';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: $btn-color;
+  white-space: nowrap;
+  outline: none;
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+  &__icon {
+    width: 14px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  &--white {
+    background: $white;
+  }
+  &--yellow {
+    background: $yellow;
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken($color: $yellow, $amount: 10%);
+    }
+  }
+  &--indigo {
+    background: $indigo;
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken($color: $indigo, $amount: 5%);
+    }
+  }
+  &--gray {
+    background: #415972;
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken($color: #415972, $amount: 5%);
+    }
+  }
+  &--rounded {
+    height: 34px;
+    border-radius: 17px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &--submit {
+    height: 60px;
+    font-size: 33px;
+    font-weight: bold;
+    letter-spacing: -0.6px;
+    color: $black;
+    padding: 0 41px;
+    margin: 15px;
+  }
+  &--cancel {
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: -0.4px;
+    color: $black;
+    background: $gray;
+    margin: 15px;
+    &:hover,
+    &:focus,
+    &:active {
+      background: darken($color: $gray, $amount: 5%);
+    }
+  }
+  &--close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+  }
+  &--menu {
+    display: none;
+    background: transparent;
+  }
+  &--hit {
+    font-size: 17px;
+    font-weight: 800;
+    font-style: normal;
+    text-transform: uppercase;
+    padding: 0 23px;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #000000;
+  }
+  &--select {
+    font-size: 13px;
+    font-weight: 800;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+    padding: 0 23px;
+    height: 23px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  &-group {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    #{$_} {
+      color: #000000;
+      margin: 0 15px;
+    }
+  }
+}
+
+@import 'btn-responsive';

@@ -1,0 +1,90 @@
+.field {
+  $_: '.field';
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__wrap {
+    max-width: 1440px;
+    width: 100%;
+  }
+  &__body {
+    // border: 1px solid red;
+    padding-top: 56%;
+    position: relative;
+  }
+  &__gate {
+    // border: 1px solid yellow;
+    position: absolute;
+    bottom: 41%;
+    left: 51%;
+    width: 25vw;
+    height: 25vh;
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .btn {
+      padding: 0 10px;
+    }
+  }
+  &__track {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 40%;
+    left: 42%;
+    svg {
+      stroke-width: 5px;
+      stroke-dasharray: 20 10;
+    }
+  }
+  #line {
+    // border: 3px solid blue;
+    position: fixed;
+    bottom: 35%;
+    left: 44%;
+    svg {
+      fill: none;
+      stroke-width: 3px;
+      stroke-dasharray: 30 10;
+    }
+  }
+  .ball-wrap {
+    position: fixed;
+    bottom: 35%;
+    left: 44%;
+    width: 80px;
+    height: 80px;
+  }
+  .ball {
+    position: absolute;
+    top: 50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: url('../images/Ball.png') no-repeat center;
+    background-size: contain;
+  }
+  @media (max-width: 1024px) {
+    &__gate {
+      width: 26vh;
+      height: 16vh;
+      font-size: 11px;
+    }
+  }
+  @media (max-width: 970px) {
+    &__gate {
+      bottom: 43%;
+      left: 50%;
+      width: 27%;
+      height: 22%;
+      max-width: 400px;
+      .btn {
+        padding: 0 10px;
+        font-size: 9px;
+      }
+    }
+  }
+}

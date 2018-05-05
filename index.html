@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Football</title>
+    <script src="js/soundjs.min.js"></script>
+    <script src="js/preloadjs.min.js"></script>
+    <script src="js/game.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- SYMBOLS - Start -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
+        class="root-svg-symbols-element">
+        <!-- 1 - Start -->
+        <symbol id="svg_tablo" viewBox="0 0 445 249">
+            <defs>
+                <path id="a" d="M0 0h12v200H0z" />
+                <path id="b" d="M0 0h12v200H0z" />
+                <rect id="c" width="445" height="209" rx="10" />
+                <linearGradient id="e" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FFF" stop-opacity="0" />
+                    <stop offset="100%" stop-color="#FFF" />
+                </linearGradient>
+                <rect id="d" width="445" height="195" rx="10" />
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(92 -67)">
+                    <use fill="#052749" xlink:href="#a" />
+                    <use fill="#000" fill-opacity=".3" xlink:href="#a" />
+                </g>
+                <path fill="#FFF" fill-opacity=".12" d="M92-67h2v200h-2z" />
+                <g>
+                    <g transform="translate(334 -67)">
+                        <use fill="#052749" xlink:href="#b" />
+                        <use fill="#000" fill-opacity=".3" xlink:href="#b" />
+                    </g>
+                    <path fill="#FFF" fill-opacity=".12" d="M334-67h2v200h-2z" />
+                </g>
+                <g>
+                    <g transform="translate(0 40)">
+                        <use fill="#052749" xlink:href="#c" />
+                        <use fill="#000" fill-opacity=".15" xlink:href="#c" />
+                    </g>
+                    <path fill="#052749" d="M6 95h433v119H6z" />
+                    <path fill="#FFF" fill-opacity=".03" d="M6 95h433v19L6 156z" />
+                    <g opacity=".2" transform="translate(0 40)">
+                        <use fill="#D8D8D8" fill-opacity="0" xlink:href="#d" />
+                        <rect width="443" height="193" x="1" y="1" stroke="url(#e)" stroke-width="2" rx="10" />
+                    </g>
+                </g>
+                <g stroke="#FFF" stroke-width="2" opacity=".3" transform="translate(6 46)">
+                    <rect width="431" height="195" x="1" y="1" rx="5" />
+                    <path d="M1 50h431v117H1z" />
+                </g>
+            </g>
+        </symbol>
+        <symbol id="svg_menu" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </symbol>
+        <symbol id="svg_sound-off" viewBox="0 0 37 31">
+            <g fill="none" fill-rule="evenodd">
+                <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M24.923 8.956L36 19.978M24.923 19.978L36 8.956"
+                />
+                <path fill="#FFF" fill-rule="nonzero" d="M0 8.267v13.089l7.615-.004 9.575 8.752c.97.582 2.195-.131 2.195-1.277V1.485c0-1.147-1.224-1.86-2.195-1.278l-9.575 8.06H0z"
+                />
+            </g>
+        </symbol>
+        <symbol id="svg_sound-on" viewBox="0 0 36 31">
+            <g fill="none" fill-rule="evenodd">
+                <path fill="#FFF" fill-rule="nonzero" d="M0 8.276v13.089l7.615-.004 9.575 8.752c.97.582 2.195-.131 2.195-1.277V1.494c0-1.147-1.224-1.86-2.195-1.278l-9.575 8.06H0z"
+                />
+                <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M25.962 26.876c5.043-1.71 8.672-6.458 8.672-12.055 0-5.603-3.638-10.349-8.69-12.056"
+                />
+                <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.154 23.087c3.608-1.037 6.25-4.342 6.25-8.267s-2.642-7.23-6.25-8.267"
+                />
+            </g>
+        </symbol>
+    </svg>
+    <!-- SYMBOLS - End -->
+    <!-- HEADER START -->
+    <header id="menu" class="header">
+        <div class="panel">
+            <div class="img img--logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <button class="btn btn--online btn--rounded btn--yellow">
+                <div class="btn__icon">
+                    <img class="icon icon--user" src="images/user.png" alt="">
+                </div>
+                <span class="btn__title btn__title--uppercase">
+                    10 572 Онлайн
+                </span>
+            </button>
+            <ul class="list list--static">
+                <li class="list__item">
+                    <img class="icon icon--ball" src="images/ball.png" alt="">
+                    <div class="list__item-desc">x
+                        <b>100</b>
+                    </div>
+                </li>
+                <li class="list__item">
+                    <img class="icon icon--prize" src="images/prize-3d.png" alt="">
+                    <div class="list__item-desc">x
+                        <b>100</b>
+                    </div>
+                </li>
+                <li class="list__item">
+                    <img class="icon icon--star" src="images/star.png" alt="">
+                    <div class="list__item-desc">
+                        Ваш рейтинг:
+                        <b>14 425</b>
+                    </div>
+                </li>
+            </ul>
+            <button class="btn btn--rules btn--rounded btn--white">
+                <span class="btn__title">
+                    Правила игры
+                </span>
+            </button>
+            <div class="img img--slogan">
+                <img src="images/text.png" alt="">
+            </div>
+            <button id="btn-mobile-menu" class="btn btn--menu">
+                <svg class="menu__svg" fill="#FFFFFF" width="48px" height="48px">
+                    <use xlink:href="#svg_menu"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <!-- HEADER END -->
+
+    <div class="page">
+        <div class="page__bg">
+            <img id="image-bg" src="images/Game_Scena_Vibor_Igroka_new.jpg" alt="">
+            <video class="hide" id="video-bg" src="images/animation/waiting.mp4" width="100%" autoplay loop></video>
+            <video class="hide" id="video-kick-gk-win" src="images/animation/Game_A_Kick+G_Left-Down+G_Victory.mov" width="100%"></video>
+        </div>
+        <div class="page__wrap">
+            <div class="field hide">
+                <div class="field__wrap">
+                    <div class="field__body">
+                        <div id="line" class="line-box"></div>
+                        <div class="ball-wrap">
+                            <div class="ball"></div>
+                        </div>
+                        <div class="field__gate">
+                            <ul class="list list--goal list--upper">
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                            </ul>
+                            <ul class="list list--goal list--lower">
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                                <li>
+                                    <button class="btn btn--select btn--indigo" data-sound="button_hi" onclick="playSound(this)">Выбрать</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="selection" class="selection right h-100">
+                <div id="bg-selection" class="selection__bg" data-sound="button_on" onclick="playSound(this)">
+                    <div class="separator">
+                        <div class="separator__line"></div>
+                        <div class="separator__label">VS</div>
+                    </div>
+                </div>
+                <div class="selection__wrap">
+                    <div class="selection__left">
+                        <div class="selection__title">
+                            <h2>Выбери свою сторону!</h2>
+                        </div>
+                        <div class="selection__subtitle">
+                            <h3>Прими участие в игре, и получи ценные призы!</h3>
+                        </div>
+                        <div class="selection__button">
+                            <label class="label label--gk label--select">Вы выбрали игру за вратаря.
+                                <br>Вы можете изменить свою роль:</label>
+                            <label class="label label--play">Нападающий</label>
+                            <button class="btn btn--select" id="forward-select">Нападающий</button>
+                            <button class="btn btn--play" id="forward-play" data-sound="button_hi" onclick="playSound(this)">Играть</button>
+                        </div>
+                    </div>
+                    <div class="selection__right">
+                        <div class="selection__button">
+                            <label class="label label--select">Вы выбрали игру за нападающего.
+                                <br>Вы можете изменить свою роль:</label>
+                            <label class="label label--play">Вратарь</label>
+                            <button class="btn btn--select" id="goalkeeper-select">Вратарь</button>
+                            <button class="btn btn--play" id="goalkeeper-play" data-sound="button_hi" onclick="playSound(this)">Играть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU start -->
+    <div id="mobile-menu" class="dropdown">
+        <div class="dropdown__item dropdown--online">
+            <button class="btn m-btn--online btn--rounded btn--yellow">
+                <div class="btn__icon">
+                    <img class="icon icon--user" src="images/user.png" alt="">
+                </div>
+                <span class="btn__title btn__title--uppercase">
+                    10 572 Онлайн
+                </span>
+            </button>
+        </div>
+        <div class="dropdown__item dropdown--static">
+            <ul class="list m-list--static">
+                <li class="list__item">
+                    <img class="icon icon--ball" src="images/ball.png" alt="">
+                    <div class="list__item-desc">x
+                        <b>100</b>
+                    </div>
+                </li>
+                <li class="list__item">
+                    <img class="icon icon--prize" src="images/prize-3d.png" alt="">
+                    <div class="list__item-desc">x
+                        <b>100</b>
+                    </div>
+                </li>
+                <li class="list__item">
+                    <img class="icon icon--star" src="images/star.png" alt="">
+                    <div class="list__item-desc">
+                        Ваш рейтинг:
+                        <b>14 425</b>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown__item dropdown--rules">
+            <button class="btn m-btn--rules btn--rounded btn--white">
+                <span class="btn__title">
+                    Правила игры
+                </span>
+            </button>
+        </div>
+        <div class="dropdown__item">
+            <div class="img m-img--slogan">
+                <img src="images/text.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- MOBILE MENU end -->
+
+    <!-- MODAL START -->
+    <div class="modal modal--confirm">
+        <div class="modal__header">
+            <div class="modal__title">Выбор сделан</div>
+            <button class="btn btn--close" data-sound="button_low" onclick="playSound(this)">
+                <img src="images/cross.png" alt="">
+            </button>
+        </div>
+        <div class="modal__body">
+            <button class="btn btn--rounded btn--submit btn--yellow" data-sound="button_hi" onclick="playSound(this)">Играть</button>
+            <button class="btn btn--rounded btn--cancel" data-sound="button_low" onclick="playSound(this)">Изменить выбор</button>
+        </div>
+    </div>
+    <!-- MODAL END -->
+
+    <!-- LOGIN MODAL start -->
+    <div class="modal modal--login">
+        <div class="modal__header">
+            <div class="modal__title">Авторизуйтесь,
+                <br/> чтобы продолжить игру.</div>
+            <button id="close-login" class="btn btn--close" data-sound="button_low" onclick="playSound(this)">
+                <img src="images/cross.png" alt="">
+            </button>
+        </div>
+        <div class="modal__body">
+            <form class="form" action="#">
+                <input type="text" placeholder="+7">
+                <input type="password" placeholder="Пароль">
+                <div class="btn-group">
+                    <button id="login-submit" type="submit" class="btn btn--rounded btn--submit btn--yellow" data-sound="button_hi" onclick="playSound(this)">Играть</button>
+                    <div class="btn-group__links">
+                        <a class="btn btn--link" href="#">Забыли пароль?</a>
+                        <a class="btn btn--link" href="#">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- LOGIN MODAL end -->
+
+    <!-- SELECT TYPE GAME MODAL start -->
+    <div id="modal-type" class="modal modal--type">
+        <div class="modal__header">
+            <button id="close-type" class="btn btn--close" data-sound="button_low" onclick="playSound(this)">
+                <img src="images/cross.png" alt="">
+            </button>
+        </div>
+        <div class="modal__body">
+            <ul class="list list--type">
+                <li class="list__item">
+                    <div class="list__item-title">Игра на победу</div>
+                    <div class="list__item-desc">
+                        <div class="image-wrap">
+                            <img src="images/ball-3x.png" alt="">
+                        </div>
+                        <span class="devider">x</span>
+                        <span class="score">100</span>
+                    </div>
+                    <div class="btn-group">
+                        <button id="play-winning" class="btn btn--rounded btn--yellow" onclick="stopThenPlay({ name: 'music_2', loop: -1, volume: 0.4 }, { name: 'crowd', loop: -1 }, { name: 'button_hi' })">Играть</button>
+                        <div class="image-wrap prize">
+                            <img class="icon icon--prize" src="images/prize-3d.png" alt="">
+                        </div>
+                        <div class="info">x
+                            <b>100</b>
+                        </div>
+                    </div>
+                </li>
+                <li class="list__separator"></li>
+                <li class="list__item">
+                    <div class="list__item-title">Тренировка</div>
+                    <div class="list__item-desc">
+                        <div class="image-wrap star">
+                            <img src="images/star-2x.png" alt="">
+                        </div>
+                        <span class="devider">x</span>
+                        <span class="score">1000</span>
+                    </div>
+                    <div class="btn-group">
+                        <button id="play-trainning" class="btn btn--rounded btn--yellow" onclick="stopThenPlay({ name: 'music_2', loop: -1, volume: 0.4 }, { name: 'crowd', loop: -1 }, { name: 'button_hi' })">Играть</button>
+                        <div class="info">
+                            Ваш рейтинг:
+                            <b>14 425</b>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- SELECT TYPE GAME MODAL end -->
+
+    <!-- CONFIRM GOAL MODAL start -->
+    <div class="modal modal--goal-confirm">
+        <div class="modal__header">
+            <div class="modal__title">Выбор сделан</div>
+            <button id="close-login" class="btn btn--close" data-sound="button_low" onclick="playSound(this)">
+                <img src="images/cross.png" alt="">
+            </button>
+        </div>
+        <div class="modal__body">
+            <div class="btn-group">
+                <button id="goal-submit" class="btn btn--rounded btn--primary btn--yellow" data-sound="button_hi" onclick="playSound(this)">Играть</button>
+                <button id="goal-select" class="btn btn--rounded btn--default btn--indigo" data-sound="button_hi" onclick="playSound(this)">Изменить выбор</button>
+            </div>
+        </div>
+    </div>
+    <!-- CONFIRM GOAL MODAL end -->
+
+    <!-- WINNER MODAL start -->
+    <div class="modal modal--winner">
+        <div class="modal__header">
+            <div class="modal__title">Вы победили!</div>
+            <button id="close-login" class="btn btn--close" data-sound="button_low" onclick="playSound(this)">
+                <img src="images/cross.png" alt="">
+            </button>
+        </div>
+        <div class="modal__body">
+            <ul class="list list--shot">
+                <li class="list__item">
+                    <span class="ball ball--green"></span>
+                </li>
+                <li class="list__item">
+                    <span class="ball ball--green"></span>
+                </li>
+                <li class="list__item">
+                    <span class="ball ball--red"></span>
+                </li>
+                <li class="list__item">
+                    <span class="ball"></span>
+                </li>
+                <li class="list__item">
+                    <span class="ball"></span>
+                </li>
+            </ul>
+            <div class="btn-group">
+                <button id="game-continue" class="btn btn--rounded btn--primary btn--yellow" data-sound="button_hi" onclick="playSound(this)">Продолжить игру</button>
+                <button id="game-new" class="btn btn--rounded btn--default btn--gray" data-sound="button_hi" onclick="playSound(this)">Новая игра</button>
+            </div>
+        </div>
+    </div>
+    <!-- WINNER MODAL end -->
+
+    <!-- TABLO start -->
+    <div class="board">
+        <div class="board__img">
+            <svg class="board__svg" width="445px" height="249px">
+                <use xlink:href="#svg_tablo"></use>
+            </svg>
+        </div>
+        <div class="board__wrap">
+            <div class="board__title">
+                Серия пенальти
+            </div>
+            <div class="board__list">
+                <ul class="list list--board">
+                    <li class="list__item">
+                        <div class="list__item-title">Мячи</div>
+                        <div class="list__item-desc">
+                            <img class="icon icon--ball-2x" src="images/ball-2x.png" alt="">
+                            <div class="list__item-desc">x
+                                <b>100</b>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__item-title">Попытки</div>
+                        <div class="list__item-desc">
+                            <ul class="list list--shot">
+                                <li class="list__item">
+                                    <span class="ball ball--green"></span>
+                                </li>
+                                <li class="list__item">
+                                    <span class="ball ball--green"></span>
+                                </li>
+                                <li class="list__item">
+                                    <span class="ball ball--red"></span>
+                                </li>
+                                <li class="list__item">
+                                    <span class="ball"></span>
+                                </li>
+                                <li class="list__item">
+                                    <span class="ball"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__item-title">Кубки</div>
+                        <div class="list__item-desc">
+                            <img class="icon icon--prize-2" src="images/prize-3d.png" alt="">
+                            <div class="list__item-desc">x
+                                <b>100</b>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="board__footer">
+                <ul class="list list--links">
+                    <li class="list__item">
+                        <a id='tablo-go-main' href="#" class="list__link" title="Главная страница">Главная страница</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__link" title="Личный кабинет">Личный кабинет</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- TABLO end -->
+
+    <!-- SOUND ICON start -->
+    <div class="icon-sound off">
+        <button id="handleSound" class="btn btn--icon">
+            <div class="icon__wrap">
+                <svg class="svg svg--sound svg--sound-off" fill="#FFFFFF" width="37px" height="37px">
+                    <use xlink:href="#svg_sound-off"></use>
+                </svg>
+                <svg class="svg svg--sound svg--sound-on" fill="#FFFFFF" width="36px" height="31px">
+                    <use xlink:href="#svg_sound-on"></use>
+                </svg>
+            </div>
+            <span class="icon__title">Звук</span>
+        </button>
+    </div>
+    <!-- SOUND ICON end -->
+
+    <script src="js/svg.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

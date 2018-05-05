@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="445" height="249" viewBox="0 0 445 249">
+    <defs>
+        <path id="a" d="M0 0h12v200H0z"/>
+        <path id="b" d="M0 0h12v200H0z"/>
+        <rect id="c" width="445" height="209" rx="10"/>
+        <linearGradient id="e" x1="50%" x2="50%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+        <rect id="d" width="445" height="195" rx="10"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(92 -67)">
+            <use fill="#052749" xlink:href="#a"/>
+            <use fill="#000" fill-opacity=".3" xlink:href="#a"/>
+        </g>
+        <path fill="#FFF" fill-opacity=".12" d="M92-67h2v200h-2z"/>
+        <g>
+            <g transform="translate(334 -67)">
+                <use fill="#052749" xlink:href="#b"/>
+                <use fill="#000" fill-opacity=".3" xlink:href="#b"/>
+            </g>
+            <path fill="#FFF" fill-opacity=".12" d="M334-67h2v200h-2z"/>
+        </g>
+        <g>
+            <g transform="translate(0 40)">
+                <use fill="#052749" xlink:href="#c"/>
+                <use fill="#000" fill-opacity=".15" xlink:href="#c"/>
+            </g>
+            <path fill="#052749" d="M6 95h433v119H6z"/>
+            <path fill="#FFF" fill-opacity=".03" d="M6 95h433v19L6 156z"/>
+            <g opacity=".2" transform="translate(0 40)">
+                <use fill="#D8D8D8" fill-opacity="0" xlink:href="#d"/>
+                <rect width="443" height="193" x="1" y="1" stroke="url(#e)" stroke-width="2" rx="10"/>
+            </g>
+        </g>
+        <g stroke="#FFF" stroke-width="2" opacity=".3" transform="translate(6 46)">
+            <rect width="431" height="195" x="1" y="1" rx="5"/>
+            <path d="M1 50h431v117H1z"/>
+        </g>
+    </g>
+</svg>

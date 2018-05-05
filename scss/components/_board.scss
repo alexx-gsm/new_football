@@ -1,0 +1,39 @@
+.board {
+  $_: '.board';
+  width: 445px;
+  height: 249px;
+  background-color: transparent;
+  // background: url('/images/tablo.svg');
+  position: relative;
+  margin: 0 auto;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  &.in {
+    top: 0;
+    transition: top ease-in-out 0.5s;
+  }
+  &__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 445px;
+    height: 249px;
+  }
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.07;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 59px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+  }
+  &__footer {
+    padding: 10px;
+  }
+}

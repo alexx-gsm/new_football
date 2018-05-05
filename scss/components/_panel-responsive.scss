@@ -1,0 +1,10 @@
+.panel {
+    $_: '.panel';
+    @media (max-width: 1350px) {
+        justify-content: space-around;
+    }
+    @media (max-width: 860px) {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+}

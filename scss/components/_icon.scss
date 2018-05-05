@@ -1,0 +1,78 @@
+.icon {
+  $_: '.icon';
+  margin-right: 7px;
+  &--prize {
+    width: 34px;
+    height: 32px;
+  }
+  &--prize-2 {
+    width: 30px;
+    height: 30px;
+  }
+  &--star {
+    margin-left: 3px;
+    margin-right: 13px;
+    padding-bottom: 4px;
+  }
+  &--ball-2x {
+    width: 40px;
+    height: 40px;
+  }
+
+  &-sound {
+    position: absolute;
+    top: 100px;
+    right: 10vw;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+    .svg {
+      &--sound-on {
+        display: none;
+      }
+    }
+    &.off {
+      .svg {
+        &--sound-off {
+          display: none;
+        }
+        &--sound-on {
+          display: block;
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: transparent;
+      &:hover,
+      &:active {
+        #{$_}__wrap {
+          background: darken($indigo, 5%);
+        }
+        #{$_}__title {
+          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    #{$_}__wrap {
+      background: $indigo;
+      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #{$_}__title {
+      font-size: 20px;
+      font-weight: 800;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+}
